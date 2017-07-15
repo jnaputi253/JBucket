@@ -36,8 +36,16 @@ public class Client {
 		service.createBucket(bucketName, client);
 	}
 	
+	public void deleteBucket(String bucketName) {
+		service.deleteBucket(bucketName, client);
+	}
+	
 	public List<Bucket> getBuckets() {
 		return null;
+	}
+	
+	public void displayBuckets() {
+		service.displayBuckets(client);
 	}
 	
 	public void putObject() {
@@ -54,10 +62,6 @@ public class Client {
 	
 	public ObjectListing getObjectsFromBucket(String bucketName, String prefix) {
 		return null;
-	}
-	
-	public void deleteBucket(String bucketName) {
-		
 	}
 	
 	public void saySomething() {
