@@ -33,7 +33,7 @@ public class Client {
 	}
 	
 	public void createBucket(String bucketName) {
-		
+		service.createBucket(bucketName, client);
 	}
 	
 	public List<Bucket> getBuckets() {
