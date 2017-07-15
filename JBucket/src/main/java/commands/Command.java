@@ -7,14 +7,16 @@ import client.Client;
 
 public class Command {
 	private String action;
-	private List<String> parameters;
+	private List<String> parameterList;
 	private Client client;
 	
 	public Command(String action, List<String> parameters, Client client) {
 		this.action = action;
 		
 		if(parameters == null) {
-			this.parameters = new ArrayList<>();
+			this.parameterList = new ArrayList<>();
+		} else {
+			this.parameterList = parameters;
 		}
 		
 		this.client = client;
@@ -50,7 +52,7 @@ public class Command {
 	}
 	
 	public List<String> getParameters() {
-		return parameters;
+		return parameterList;
 	}
 	
 	public Client getExecutor() {

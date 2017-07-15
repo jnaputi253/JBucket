@@ -11,7 +11,7 @@ public class ParserHelper {
 		.withClient(client);
 		
 		if(commandTokens.size() > 2) {
-			commandBuilder.withParameters(commandTokens.subList(1, commandTokens.size()));
+			commandBuilder.withParameters(commandTokens.subList(2, commandTokens.size()));
 		}
 		
 		return commandBuilder.build();
