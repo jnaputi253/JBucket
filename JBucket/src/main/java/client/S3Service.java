@@ -7,7 +7,7 @@ import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.S3Object;
 
 public class S3Service {
-public void createBucket(String bucketName, Client client) {
+	public void createBucket(String bucketName, Client client) {
 		
 	}
 	

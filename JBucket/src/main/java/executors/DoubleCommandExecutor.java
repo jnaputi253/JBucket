@@ -4,6 +4,7 @@ import commands.Command;
 import errors.ErrorHandler;
 
 public class DoubleCommandExecutor extends BaseMultiCommandExecutor {
+	
 	@Override
 	public void execute(Command commandToExecute) {
 		String action = commandToExecute.getAction();
