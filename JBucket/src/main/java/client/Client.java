@@ -25,7 +25,7 @@ public class Client {
 			System.out.println(
                     "Cannot load the credentials from the credential profiles file. " +
                     "Please make sure that your credentials file is at the correct " +
-                    "location (/Users/jnaputi253/.aws/credentials), and is in valid format.");
+                    "location (/Users/{User}/.aws/credentials), and is in valid format.");
 			System.exit(1);
 		}
 		
