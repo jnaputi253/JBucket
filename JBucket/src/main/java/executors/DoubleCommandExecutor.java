@@ -16,8 +16,8 @@ public class DoubleCommandExecutor extends BaseMultiCommandExecutor {
 		case "delete":
 			client.deleteBucket(commandToExecute.getParameters().get(0));
 			break;
-		case "buckets":
-			client.displayBuckets();
+		case "list":
+			System.out.println("Command not implemented");
 			break;
 		default:
 			ErrorHandler.raiseError("invalid-command", action);

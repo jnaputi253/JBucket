@@ -45,7 +45,7 @@ public class Client {
 	}
 	
 	public void displayBuckets() {
-		service.displayBuckets(client);
+		
 	}
 	
 	public void putObject() {
