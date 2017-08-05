@@ -3,7 +3,8 @@ package executors;
 import commands.Command;
 import errors.ErrorHandler;
 
-public class SingleCommandExecutor implements Executor {
+public class SingleCommandExecutor extends BaseCommandExecutor implements Executor {
+	
 	@Override
 	public void execute(Command commandToExecute) {
 		String action = commandToExecute.getAction();
@@ -34,6 +35,6 @@ public class SingleCommandExecutor implements Executor {
 	}
 	
 	private void executeAuthorCommand() {
-		System.out.println("This simple app was made by Juan Naputi\n");
+		System.out.println("{placeholder}");
 	}
 }
