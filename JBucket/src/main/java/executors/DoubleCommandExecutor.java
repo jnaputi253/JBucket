@@ -3,7 +3,7 @@ package executors;
 import commands.Command;
 import errors.ErrorHandler;
 
-public class DoubleCommandExecutor extends BaseMultiCommandExecutor {
+public class DoubleCommandExecutor extends BaseCommandExecutor {
 	
 	@Override
 	public void execute(Command commandToExecute) {
