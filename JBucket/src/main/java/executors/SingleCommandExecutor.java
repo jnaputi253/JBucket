@@ -5,6 +5,8 @@ import errors.ErrorHandler;
 
 public class SingleCommandExecutor extends BaseCommandExecutor implements Executor {
 	
+	
+	
 	@Override
 	public void execute(Command commandToExecute) {
 		String action = commandToExecute.getAction();
@@ -15,6 +17,9 @@ public class SingleCommandExecutor extends BaseCommandExecutor implements Execut
 			break;
 		case "author":
 			executeAuthorCommand();
+			break;
+		case "list":
+			executeListAllBucketsCommand();
 			break;
 		default:
 			ErrorHandler.raiseError("invalid-command", action);
@@ -32,9 +37,16 @@ public class SingleCommandExecutor extends BaseCommandExecutor implements Execut
 		System.out.println("jb delete {bucketName} - delete the specified bucket");
 		System.out.println("jb put - initiate a put request.  You will be prompted for the bucket name, key, and data to put");
 		System.out.println("jb get - initiate a get request.  You will be prompted for the bucket name, key, and an optional prefix");
+		
+		System.out.println("List Commands");
+		System.out.println("jb list - Display all top-level buckets");
 	}
 	
 	private void executeAuthorCommand() {
 		System.out.println("{placeholder}");
+	}
+	
+	private void executeListAllBucketsCommand() {
+		System.out.println("Print all root-level buckets here");
 	}
 }
