@@ -47,6 +47,6 @@ public class SingleCommandExecutor extends BaseCommandExecutor implements Execut
 	}
 	
 	private void executeListAllBucketsCommand() {
-		System.out.println("Print all root-level buckets here");
+		this.client.displayBuckets();
 	}
 }

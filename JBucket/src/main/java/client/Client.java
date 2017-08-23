@@ -1,6 +1,7 @@
 package client;
 
 import java.util.List;
+import java.util.Scanner;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.profile.ProfileCredentialsProvider;
@@ -14,6 +15,7 @@ import com.amazonaws.services.s3.model.S3Object;
 public class Client {
 	private AmazonS3 client;
 	private S3Service service;
+	private Scanner kb;
 	
 	public Client() {
 		try {
@@ -21,6 +23,8 @@ public class Client {
 					.withRegion(Regions.US_WEST_2)
 					.withCredentials(new ProfileCredentialsProvider("default"))
 					.build();
+			
+			kb = new Scanner(System.in);
 		} catch(AmazonClientException e) {
 			System.out.println(
                     "Cannot load the credentials from the credential profiles file. " +
@@ -40,15 +44,12 @@ public class Client {
 		service.deleteBucket(bucketName, client);
 	}
 	
-	public List<Bucket> getBuckets() {
-		return null;
-	}
-	
 	public void displayBuckets() {
-		
+		this.service.displayBuckets(client);
 	}
 	
 	public void putObject() {
+		System.out.print("Target bucket: ");
 		
 	}
 	

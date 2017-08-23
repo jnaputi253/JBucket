@@ -29,12 +29,26 @@ public class S3Service {
 		System.out.println("The bucket has been deleted");
 	}
 	
-	public List<Bucket> getBuckets(AmazonS3 client) {
-		return null;
-	}
-	
 	public void displayBuckets(AmazonS3 client) {
-		
+		try {
+			System.out.println("Grabbing buckets...");
+			
+			List<Bucket> buckets = client.listBuckets();
+			
+			if(!buckets.isEmpty()) {
+				System.out.println("\n--- Buckets ---");
+				for(Bucket bucket : buckets) {
+					System.out.println(bucket.getName());
+					
+				}
+			} else {
+				System.out.println("You have no buckets");
+			}
+			
+			System.out.println();
+		} catch(SdkClientException e) {
+			System.out.printf("%s\n\n", e.getMessage());
+		}
 	}
 	
 	public void putObject(AmazonS3 client) {
